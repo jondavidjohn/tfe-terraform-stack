@@ -5,12 +5,12 @@ store "varset" "tokens" {
 
 deployment "local" {
   inputs = {
-    tfe_token = store.varset.tokens.TFE_TOKEN
-    hostname = "jondavidjohn.ngrok.io"
+    tfe_token         = store.varset.tokens.TFE_TOKEN
+    hostname          = "jondavidjohn.ngrok.io"
     organization_name = "admin"
-    oauth_client_id = ""
-    user_email = "admin@hashicorp.com"
-    branch = "master"
-    repo = "jondavidjohn/terraform-tests"
+    oauth_client_id   = ""
+    user_email        = "admin@hashicorp.com"
+    branch            = "master"
+    repo              = "jondavidjohn/terraform-tests"
   }
 }
