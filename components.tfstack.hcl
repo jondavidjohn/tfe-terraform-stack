@@ -16,10 +16,6 @@ variable "oauth_client_id" {
   type = string
 }
 
-variable "user_email" {
-  type = string
-}
-
 variable "branch" {
   type = string
 }
@@ -48,7 +44,6 @@ component "workspaces" {
   inputs = {
     organization_name = var.organization_name
     oauth_client_id   = var.oauth_client_id
-    user_email        = var.user_email
     branch            = var.branch
     repo              = var.repo
   }

@@ -14,10 +14,6 @@ variable "oauth_client_id" {
   type = string
 }
 
-variable "user_email" {
-  type = string
-}
-
 variable "branch" {
   type = string
 }
@@ -26,12 +22,8 @@ variable "repo" {
   type = string
 }
 
-data "tfe_organization_membership" "user" {
-  organization  = var.organization_name
-  email = var.user_email
-}
-
 data "tfe_oauth_client" "github" {
+  organization    = var.organization_name
   oauth_client_id = var.oauth_client_id
 }
 
