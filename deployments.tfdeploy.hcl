@@ -7,7 +7,7 @@ deployment "local" {
   inputs = {
     tfe_token         = store.varset.tokens.TFE_TOKEN
     hostname          = "jondavidjohn.ngrok.io"
-    organization_name = "admin"
+    organization_name = "hashicorp"
     oauth_client_id   = "oc-Zq9rND8i3QcdWYZe"
     branch            = "master"
     repo              = "jondavidjohn/terraform-tests"
