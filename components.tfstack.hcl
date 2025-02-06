@@ -1,3 +1,7 @@
+variable "tfe_token" {
+  type = string
+}
+
 variable "hostname" {
   type = string
 }
@@ -31,6 +35,7 @@ terraform {
 }
 
 provider "tfe" {
+  token = var.tfe_token
   hostname = var.hostname
 }
 
