@@ -43,7 +43,7 @@ resource "tfe_team" "visible_team" {
 resource "tfe_team_access" "team_workspace_access" {
   for_each     = var.workspace_ids
   access       = "read"
-  team_id      = tfe_team.visible_team
+  team_id      = tfe_team.visible_team.id
   workspace_id = each.value
 }
 
