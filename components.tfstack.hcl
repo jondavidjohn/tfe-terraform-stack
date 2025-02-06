@@ -24,6 +24,14 @@ variable "repo" {
   type = string
 }
 
+variable "visible_team_users" {
+  type = set(string)
+}
+
+variable "secret_team_users" {
+  type = set(string)
+}
+
 required_providers {
   tfe = {
     source  = "hashicorp/tfe"
@@ -57,15 +65,10 @@ component "teams" {
   source = "./teams"
 
   inputs = {
-    organization_name = var.organization_name
     workspace_ids     = component.workspaces.ids
-    visible_team_users = [
-      "admin@hashicorp.com",
-      "jjohnson@hashicorp.com",
-    ]
-    secret_team_users = [
-      "admin@hashicorp.com",
-    ]
+    organization_name = var.organization_name
+    visible_team_users = var.visible_team_users
+    secret_team_users = var.secret_team_users
   }
 
   providers = {
