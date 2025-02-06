@@ -50,7 +50,7 @@ resource "tfe_team_access" "team_workspace_access" {
 
 resource "tfe_team" "secret_teams" {
   count = 3
-  name         = "visible-team-${count.index}"
+  name         = "secret-team-${count.index}"
   organization = var.organization_name
   visibility   = "organization"
 }
