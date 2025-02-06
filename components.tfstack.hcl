@@ -65,10 +65,10 @@ component "teams" {
   source = "./teams"
 
   inputs = {
-    workspace_ids     = component.workspaces.ids
-    organization_name = var.organization_name
+    workspace_ids      = component.workspaces.ids
+    organization_name  = var.organization_name
     visible_team_users = var.visible_team_users
-    secret_team_users = var.secret_team_users
+    secret_team_users  = var.secret_team_users
   }
 
   providers = {

@@ -34,29 +34,32 @@ data "tfe_organization_membership" "secret_team_members" {
   email         = each.value
 }
 
-resource "tfe_team" "visible_team" {
-  name         = "visible-team"
+resource "tfe_team" "visible_teams" {
+  count = 3
+  name         = "visible-team-${count.index}"
   organization = var.organization_name
   visibility   = "organization"
 }
 
 resource "tfe_team_access" "team_workspace_access" {
-  for_each     = var.workspace_ids
+  for_each     = setproduct(var.workspace_ids, toset([for t in tfe_team.visible_teams : t.id]))
   access       = "read"
-  team_id      = tfe_team.visible_team.id
-  workspace_id = each.value
+  workspace_id = each.value[0]
+  team_id      = each.value[1]
 }
 
 resource "tfe_team" "secret_team" {
-  name         = "secret-team"
+  count = 3
+  name         = "visible-team-${count.index}"
   organization = var.organization_name
+  visibility   = "organization"
 }
 
 resource "tfe_team_access" "secret_team_workspace_access" {
-  for_each     = var.workspace_ids
+  for_each     = setproduct(var.workspace_ids, toset([for t in tfe_team.secret_teams : t.id]))
   access       = "read"
-  team_id      = tfe_team.secret_team.id
-  workspace_id = each.value
+  workspace_id = each.value[0]
+  team_id      = each.value[1]
 }
 
 resource "tfe_team_organization_member" "visible_team_user_membership" {
