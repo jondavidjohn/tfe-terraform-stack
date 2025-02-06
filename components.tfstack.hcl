@@ -1,6 +1,7 @@
 variable "tfe_token" {
   type      = string
   sensitive = true
+  ephemeral = true
 }
 
 variable "hostname" {
