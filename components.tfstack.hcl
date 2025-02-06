@@ -52,3 +52,23 @@ component "workspaces" {
     tfe = provider.tfe.this
   }
 }
+
+component "teams" {
+  source = "./teams"
+
+  inputs = {
+    organization_name = var.organization_name
+    workspace_ids     = component.workspaces.ids
+    visible_team_users = [
+      "admin@hashicorp.com",
+      "jjohnson@hashicorp.com",
+    ]
+    secret_team_users = [
+      "admin@hashicorp.com",
+    ]
+  }
+
+  providers = {
+    tfe = provider.tfe.this
+  }
+}

@@ -93,13 +93,13 @@ resource "tfe_workspace" "tagged" {
   tag_names         = ["dev", "infra", "useast1"]
 }
 
-output "workspace_ids" {
+output "ids" {
   value = [
-    tfe_workspace.random_workspace,
-    tfe_workspace.variable_dump_workspace,
-    tfe_workspace.variable_repro_workspace,
-    tfe_workspace.tagged_vcs,
-    tfe_workspace.tagged,
+    tfe_workspace.random_workspace.id,
+    tfe_workspace.variable_dump_workspace.id,
+    tfe_workspace.variable_repro_workspace.id,
+    tfe_workspace.tagged_vcs.id,
+    tfe_workspace.tagged.id,
   ]
   description = "Created workspace ids"
 }
