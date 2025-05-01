@@ -1,5 +1,5 @@
 store "varset" "tokens" {
-  id       = "varset-ZJq9eszx1Tno7tAQ"
+  id       = "varset-5Z9xShZJbbrmAnGG"
   category = "env"
 }
 
@@ -21,19 +21,19 @@ deployment "local" {
   }
 }
 
-deployment "oasis" {
-  inputs = {
-    tfe_token         = store.varset.tokens.OASIS_TFE_TOKEN
-    hostname          = "app.staging.terraform.io"
-    organization_name = "stack-target"
-    oauth_client_id   = "oc-Pmy5RLQo1Y9pWsT8"
-    branch            = "master"
-    repo              = "jondavidjohn/terraform-tests"
-    visible_team_users = [
-      "jjohnson@hashicorp.com",
-    ]
-    secret_team_users = [
-      "jjohnson@hashicorp.com",
-    ]
-  }
-}
+# deployment "oasis" {
+#   inputs = {
+#     tfe_token         = store.varset.tokens.OASIS_TFE_TOKEN
+#     hostname          = "app.staging.terraform.io"
+#     organization_name = "stack-target"
+#     oauth_client_id   = "oc-Pmy5RLQo1Y9pWsT8"
+#     branch            = "master"
+#     repo              = "jondavidjohn/terraform-tests"
+#     visible_team_users = [
+#       "jjohnson@hashicorp.com",
+#     ]
+#     secret_team_users = [
+#       "jjohnson@hashicorp.com",
+#     ]
+#   }
+# }
