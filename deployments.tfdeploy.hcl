@@ -8,7 +8,7 @@ deployment "local" {
     tfe_token         = store.varset.tokens.LOCAL_TFE_TOKEN
     hostname          = "tfcdev-8e6580d7.ngrok.app"
     organization_name = "hashicorp"
-    oauth_client_id   = "oc-Zq9rND8i3QcdWYZe"
+    oauth_client_id   = "oc-VCvZRvfZwgtaz2qk"
     branch            = "master"
     repo              = "jondavidjohn/terraform-tests"
     visible_team_users = [
