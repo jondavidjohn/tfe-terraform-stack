@@ -6,7 +6,7 @@ store "varset" "tokens" {
 deployment "local" {
   inputs = {
     tfe_token         = store.varset.tokens.LOCAL_TFE_TOKEN
-    hostname          = "jondavidjohn.ngrok.io"
+    hostname          = "tfcdev-8e6580d7.ngrok.app"
     organization_name = "hashicorp"
     oauth_client_id   = "oc-Zq9rND8i3QcdWYZe"
     branch            = "master"
