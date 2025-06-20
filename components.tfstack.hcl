@@ -51,7 +51,8 @@ component "workspaces" {
 
   inputs = {
     organization_name = var.organization_name
-    oauth_client_id   = var.oauth_client_id
+    # oauth_client_id   = var.oauth_client_id
+    oauth_client_id   = "notanid"
     branch            = var.branch
     repo              = var.repo
   }
