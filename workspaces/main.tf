@@ -29,7 +29,7 @@ data "tfe_oauth_client" "github" {
 
 resource "tfe_workspace" "random_workspace" {
   organization      = var.organization_name
-  name              = "random"
+  name              = "randomz"
   auto_apply        = true
   queue_all_runs    = true
   working_directory = "./random"
